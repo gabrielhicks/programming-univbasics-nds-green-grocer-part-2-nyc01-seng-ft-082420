@@ -2,6 +2,7 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
+  applied_cart = []
   cart.each do |item|
     coupons.each do |coupon|
       if item[:item] == coupon[:item]
@@ -26,6 +27,7 @@ def apply_clearance(cart)
       item[:price] = (item[:price] * 0.8).round(2)
     end
   end
+  cart
 end
 
 def checkout(cart, coupons)
